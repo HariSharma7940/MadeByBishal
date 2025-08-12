@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kathmandu Valley Bus Tracker</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🚌 Kathmandu Valley Public Transport Tracker</h1>
+    <div id="clock"></div>
+  </header>
+
+  <!-- Slider Section (Below Heading) -->
+  <section class="slider-container">
+    <div class="slider">
+      <img src="sajhaimg1.webp" alt="Sajha Yatayat Bus" class="slider-img" />
+      <img src="Mahayogbus.webp" alt="Mahayog Bus" class="slider-img" />
+      <img src="sajha4.jpg" alt="Nepal Yatayat Bus" class="slider-img" />
+      <img src="Nepalimg.jpg" alt="Nepal Yatayat Bus" class="slider-img" />
+      <img src="sajha2.jpg" alt="Nepal Yatayat Bus" class="slider-img" />
+      <img src="sajha3.jpeg" alt="Nepal Yatayat Bus" class="slider-img" />
+      
+    </div>
+  </section>
+
+  <main>
+    <section class="controls">
+      <label for="bus-select">Choose Bus:</label>
+      <select id="bus-select" onchange="updateBusInfo()">
+        <option value="">-- Select --</option>
+        <option value="sajha">Sajha Yatayat</option>
+        <option value="mahayogi">Mahayogi Yatayat</option>
+        <option value="nepal-yatayat">Nepal Yatayat</option>
+      </select>
+      <p id="location"></p>
+      <p id="seats"></p>
+      <p id="eta"></p>
+    </section>
+
+    <section class="route-planner">
+      <h3>🗺️ Plan Your Route</h3>
+      <label>From:
+        <input id="from" placeholder="e.g. Kalanki" list="places" />
+      </label>
+      <label>To:
+        <input id="to" placeholder="e.g. Baneshwor" list="places" />
+      </label>
+      <button onclick="showRoute()">Show Route</button>
+
+      <datalist id="places">
+        <option value="Ratnapark" />
+        <option value="Kalanki" />
+        <option value="Baneshwor" />
+        <option value="Koteshwor" />
+        <option value="Newroad" />
+        <option value="Maitighar" />
+        <option value="Tripureshwor" />
+        <option value="Gaushala" />
+        <option value="Baluwatar" />
+        <option value="Gongabu" />
+        <option value="Samakhusi" />
+      </datalist>
+    </section>
+
+    <div id="map"></div>
+
+    <section class="feedback">
+      <h3>📝 Feedback</h3>
+      <textarea id="feedback-text" placeholder="Write your feedback here..."></textarea><br />
+      <button onclick="submitFeedback()">Submit Feedback</button>
+      <p id="feedback-response"></p>
+    </section>
+  </main>
+
+  <section id="features">
+    <div id="feature">
+      <h1>Our Features</h1>
+      <p>The public transport services in Kathmandu Valley — Sajha Yatayat, Mahayog, and Nepal Yatayat — strive to provide safe, reliable, and affordable travel options for commuters. Sajha Yatayat is known for its clean, environmentally friendly buses and extensive network connecting key parts of the city. Mahayog focuses on punctuality and comfortable rides, with well-maintained buses and helpful staff. Nepal Yatayat offers efficient and frequent service along major routes, making daily commuting easier for thousands of passengers. Together, these services aim to reduce traffic congestion and promote sustainable transportation for Kathmandu’s growing population.</p>
+    </div>
+  </section>
+
+
+
+  <footer class="flower-footer">
+    <!-- <img src="https://plus.unsplash.com/premium_photo-1676475964992-6404b8db0b53?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Beautiful Flower" /> -->
+ </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/slider.js"></script>
+</body>
+</html>
